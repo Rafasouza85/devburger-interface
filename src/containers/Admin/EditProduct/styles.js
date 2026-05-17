@@ -22,7 +22,7 @@ export const LabelUpload = styled.label`
     padding: 10px;
     display: flex;
     color: ${(props) => props.theme.white};
-    margin-top: 20px 0;
+    margin: 20px 0;
 
     > svg {
         width: 20px;

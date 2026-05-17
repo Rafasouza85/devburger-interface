@@ -80,7 +80,7 @@ input {
   border: none;
   height: 52px;
   border-radius: 5px;
-  padding: 0 16;
+  padding: 0 16px;
 }
 
 label {

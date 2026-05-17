@@ -4,9 +4,8 @@ import { SideNavAdmin } from '../../components/SideNavAdmin'
 import { Container } from './styles'
 
 export function AdminLayout() {
-    const { admin: isAdmin } = JSON.parse(
-        localStorage.getItem('devburger:userData'),
-    );
+    const userData = localStorage.getItem('devburger:userData');
+    const { admin: isAdmin } = userData ? JSON.parse(userData) : { admin: false };
 
     return isAdmin ? (
         <Container>

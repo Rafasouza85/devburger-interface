@@ -75,9 +75,9 @@ import { FilterOption, Filter } from './styles';
 import { orderStatusOptions } from './orderStatus';
 
 export function Orders() {
-    const [orders, setOrders] = useState([]); //bacjup
+    const [orders, setOrders] = useState([]);
     const [filteredOrders, setFilteredOrders] = useState([]); //os valores que estão na tela
-    const [activeStatus, setactiveStatus] = useState(0);
+    const [activeStatus, setActiveStatus] = useState(0);
 
 
     const [rows, setRows] = useState([])
@@ -116,7 +116,7 @@ export function Orders() {
             const newOrders = orders.filter((order) => order.status === status.value);
             setFilteredOrders(newOrders)
         }
-        setactiveStatus(status.id);
+        setActiveStatus(status.id);
     }
     useEffect(() => {
         if (activeStatus === 0) {

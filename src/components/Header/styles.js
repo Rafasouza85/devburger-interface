@@ -41,10 +41,10 @@ export const Navigation = styled.nav`
 export const HeaderLink = styled(Link)`
     color: ${(props) =>
         props.$isActive
-            ? (props) => props.theme.purple
-            : (props) => props.theme.white};
+            ? props.theme.purple
+            : props.theme.white};
     border-bottom: ${(props) =>
-        props.$isActive ? `1px solid ${(props) => props.theme.purple}` : 'none'};
+        props.$isActive ? `1px solid ${props.theme.purple}` : 'none'};
     padding-bottom: 5px;
     text-decoration: none;
     font-size:14px;
@@ -84,7 +84,7 @@ font-size: 14px;
 export const LinkContainer = styled.div`
 display: flex;
 align-items: center;
-gap: 10;
+gap: 10px;
 `;
 
 export const Logout = styled.button`

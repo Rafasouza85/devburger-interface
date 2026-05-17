@@ -9,7 +9,7 @@ import { Container, Title } from "./styles";
 import { CardProduct } from "../CardProduct";
 
 export function OffersCarousel() {
-    const [offers, setoffers] = useState([]);
+    const [offers, setOffers] = useState([]);
 
     useEffect(() => {
         async function loadproducts() {
@@ -22,7 +22,7 @@ export function OffersCarousel() {
                     ...product,
                 }));
 
-            setoffers(onlyOffers);
+            setOffers(onlyOffers);
         }
 
         loadproducts();

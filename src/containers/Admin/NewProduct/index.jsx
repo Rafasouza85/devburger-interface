@@ -19,7 +19,7 @@ const schema = yup
         file: yup.mixed().test('required', 'Escolha um arquivo para continuar', (value) => {
             return value && value.length > 0;
         }).test('fileSize', 'Carregue arquivos até 3mb', (value) => {
-            return value && value.length > 0 && value[0].size <= 30000;
+            return value && value.length > 0 && value[0].size <= 3000000;
         })
             .test('type', 'Carregue apenas imagens PNG ou JPEG', (value) => {
                 return (
@@ -65,8 +65,8 @@ export function NewProduct() {
 
         await toast.promise(api.post('/products', productFormData), {
             pending: 'Adicionando o produto...',
-            success: 'Producto criado com sucesso',
-            error: 'Falha ao adiconar o produto tente novamente',
+            success: 'Produto criado com sucesso',
+            error: 'Falha ao adicionar o produto tente novamente',
         });
 
         setTimeout(() => {

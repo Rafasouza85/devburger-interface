@@ -66,7 +66,7 @@ export function CheckoutForm() {
           }, 3000);
           
           clearCart();
-          toast.success('Pedido Relizado com sucesso!');
+          toast.success('Pedido Realizado com sucesso!');
         } else if (status === 409) {
           toast.error('Falha ao Realizar seu Pedido');
         } else {

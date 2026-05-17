@@ -1,7 +1,7 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ImageIcon } from "@phosphor-icons/react";
 import { Controller, useForm } from "react-hook-form";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 import * as yup from "yup";
 import { api } from '../../../services/api';
@@ -25,7 +25,7 @@ export function EditProduct() {
 
     const navigate = useNavigate();
 
-    const { state: { product } } = useLocation();
+    const { state } = useLocation();
 
     useEffect(() => {
         async function loadCategories() {
@@ -45,6 +45,10 @@ export function EditProduct() {
     } = useForm({
         resolver: yupResolver(schema),
     });
+    if (!state?.product) return <Navigate to="/admin/produtos" />;
+
+    const product = state.product;
+
     const onSubmit = async (data) => {
         const productFormData = new FormData();
 

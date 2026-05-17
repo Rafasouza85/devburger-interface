@@ -11,7 +11,7 @@ export const CartProvider = ({ children }) => {
         let newProductIncart = [];
 
         if (cartIndex >= 0) {
-            newProductIncart = cartProducts;
+            newProductIncart = [...cartProducts];
 
             newProductIncart[cartIndex].quantity =
                 newProductIncart[cartIndex].quantity + 1;
